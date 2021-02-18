@@ -23,7 +23,7 @@ namespace Models
         public string telefone { get; set; }
 
         // COMUNS
-        public string cep { get; set; }
+        public dto_cep cep { get; set; }
         public string FraseMotivacional { get; set; }
         #endregion
 
@@ -36,6 +36,8 @@ namespace Models
     public class InfosAcademicas
     {
         public string Nome_instituicao { get; set; }
+        public string TipoCurso { get; set; }
+        public string Curso { get; set; }
         public string Descricao_aprendizado { get; set; }
         public string funcao { get; set; }
         public DateTime DataInicio { get; set; }
@@ -46,9 +48,21 @@ namespace Models
     public class HistoricoProfissional
     {
         public string Nome_instituicao { get; set; }
+        public string Cargo { get; set; }
         public string Descricao_cargo { get; set; }
         public string funcao { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataConclusao { get; set; }
+    }
+
+    [Serializable]
+    public class dto_cep
+    {
+        public string cep { get; set; }
+        public string logradouro { get; set; }
+        public string complemento { get; set; }
+        public string bairro { get; set; }
+        public string localidade { get; set; }
+        public string uf { get; set; }
     }
 }

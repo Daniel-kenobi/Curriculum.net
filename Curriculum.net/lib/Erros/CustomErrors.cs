@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Models;
 
 namespace lib.Retornos
 {
@@ -22,12 +23,18 @@ namespace lib.Retornos
         }
     }
 
-    public class Sucess
+    public class Token
     {
+        public string token{ get; set; }
         public string Description { get; set; }
-        public Sucess(string Description)
+        public Token(string Description)
         {
             this.Description = Description;
         }
+    }
+
+    public class Sucess
+    {
+        public CurriculumModel Model { get; set; }
     }
 }
