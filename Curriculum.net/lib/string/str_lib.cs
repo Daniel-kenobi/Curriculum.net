@@ -38,14 +38,31 @@ namespace lib.str
 
             sb.Append($"<h1 style=\"color:black; text-align: center\"> {infos.Nome} </h1>");
 
-            sb.Append($"<p style=\"font-size: 16px; text-align: center\"><b> {infos.Email} • {infos.telefone}");
+            sb.Append($"<p style=\"font-size: 16px; text-align: center\"><b> {infos.Email} • {infos.telefone} ");
 
             if (!string.IsNullOrEmpty(infos.cep.cep))
-                sb.Append($"• {infos.cep.localidade} - {infos.cep.uf} </b></p>");
+                sb.Append($"• {infos.cep.localidade} - {infos.cep.uf} ");
 
-            sb.Append("<p style = \"color: darkgray; font-size: 14px; text-align: center\"> Me encantaria encontrar uma vaga para essa empresa que é uma instituição que admiro tanto. Além disso, acredito que minha desenvoltura ");
-            sb.Append("natural com pessoas, ótima comunicação, e jeito cuidadoso se provarão muito úteis. Gostaria de poder falar sobre como posso contribuir para");
-            sb.Append(" essa empresa, e contando com experiência para o meu aperfeiçoamento pessoal, já agradeço pela futura resposta positiva!</p>");
+            if (!string.IsNullOrEmpty(infos.Github) && !string.Equals(infos.Github, "string"))
+                sb.Append($"• Github: {infos.Github} ");
+
+            if (!string.IsNullOrEmpty(infos.Linkedin) && !string.Equals(infos.Linkedin, "string"))
+                sb.Append($"• Linkedin: {infos.Linkedin} ");
+
+            if (!string.IsNullOrEmpty(infos.Instagram) && !string.Equals(infos.Instagram, "string"))
+                sb.Append($"• Instagram: {infos.Instagram} ");
+
+            sb.Append("</b></p>");
+
+            
+                if (string.Equals(infos.FraseMotivacional, "string") || string.IsNullOrEmpty(infos.FraseMotivacional))
+                {
+                    sb.Append("<p style = \"color: darkgray; font-size: 14px; text-align: center\"> Me encantaria encontrar uma vaga para essa empresa que é uma instituição que admiro tanto. Além disso, acredito que minha desenvoltura ");
+                    sb.Append("natural com pessoas, ótima comunicação, e jeito cuidadoso se provarão muito úteis. Gostaria de poder falar sobre como posso contribuir para");
+                    sb.Append(" essa empresa, e contando com experiência para o meu aperfeiçoamento pessoal, já agradeço pela futura resposta positiva!</p>");
+                }
+                else
+                    sb.Append($"<p style = \"color: darkgray; font-size: 14px; text-align: center\">{infos.FraseMotivacional}</p>");
 
             if (infos.lst_infos_academicas.Count > 0)
             {
@@ -53,8 +70,8 @@ namespace lib.str
 
                 foreach (var i in infos.lst_infos_academicas)
                 {
-                    sb.Append($"<h3 style=\"color: black;\"> {i.Nome_instituicao} • {i.Curso}</h3>");
-                    sb.Append($"<p style=\"color: darkgray;\">{i.TipoCurso} • Concluído em {i.DataConclusao.ToString("dd/MM/yyyy")}</p>");
+                    sb.Append($"<h3 style=\"color: black;\"> {i.Nome_instituicao} • {i.TipoCurso}</h3>");
+                    sb.Append($"<p style=\"color: darkgray;\">Concluído em {i.DataConclusao.ToString("dd/MM/yyyy")}</p>");
                     sb.Append($"<p style=\"color: darkgray;\"> {i.Descricao_aprendizado}</p>");
                 }
             }
@@ -68,10 +85,24 @@ namespace lib.str
                     sb.Append($"<p style=\"color: darkgray;\"> Entrada: {i.DataInicio.ToString("dd/MM/yyyy")} - Saída: {i.DataConclusao.ToString("dd/MM/yyyy")}</p>");
                     sb.Append($"<p style=\"color: darkgray;\"> {i.Descricao_cargo}</p>");
                 }
-                sb.Append("</body>");
-                sb.Append("<footerp style=\"color: black; font-size: 12px; text-align: center\"><p>Agradeço o retorno positívo</p></footer>");
-                sb.Append("</html>");
+
             }
+
+            if (infos.lst_soft_skills.Count > 0)
+            {
+                sb.Append("<h2 style=\"color: steelblue;\"> Habilidades </h2>");
+
+                foreach (var i in infos.lst_soft_skills)
+                {
+                    sb.Append($"<h3 style=\"color: black;\"> {i.Nome}</h3>");
+                    sb.Append($"<p style=\"color: darkgray;\"> {i.descricao}");
+                }
+            }
+
+            sb.Append("</body>");
+            sb.Append("<footerp style=\"color: black; font-size: 12px; text-align: center\"><p>Agradeço o retorno positívo</p></footer>");
+            sb.Append("</html>");
+
             return sb.ToString();
         }
 

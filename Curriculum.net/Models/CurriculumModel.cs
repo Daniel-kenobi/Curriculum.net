@@ -27,9 +27,17 @@ namespace Models
         public string FraseMotivacional { get; set; }
         #endregion
 
+        // Redes sociais
+        #region REDES SOCIAIS
+        public string Linkedin { get; set; } 
+        public string Github { get; set; } 
+        public string Instagram { get; set; }
+        #endregion
+
         // LISTA DE INFORMAÇÕES ACADEMICAS E DE HISTÓRICO PROFISSIONAIS
         public List<InfosAcademicas> lst_infos_academicas { get; set; }
         public List<HistoricoProfissional> lst_Historico_Profissional { get; set; }
+        public List<SoftSkills> lst_soft_skills { get; set; }
     }
 
     [Serializable]
@@ -39,7 +47,6 @@ namespace Models
         public string TipoCurso { get; set; }
         public string Curso { get; set; }
         public string Descricao_aprendizado { get; set; }
-        public string funcao { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataConclusao { get; set; }
     }
@@ -50,7 +57,6 @@ namespace Models
         public string Nome_instituicao { get; set; }
         public string Cargo { get; set; }
         public string Descricao_cargo { get; set; }
-        public string funcao { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataConclusao { get; set; }
     }
@@ -64,5 +70,12 @@ namespace Models
         public string bairro { get; set; }
         public string localidade { get; set; }
         public string uf { get; set; }
+    }
+
+    [Serializable]
+    public class SoftSkills
+    {
+        public string Nome { get; set; }
+        public string descricao { get; set; }
     }
 }

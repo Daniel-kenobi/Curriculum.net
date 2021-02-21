@@ -37,37 +37,50 @@ namespace Curriculum.net.Controllers
         [Authorize] // Requisito autorização por token
         public IActionResult Criar([FromBody] CurriculumModel adt)
         {
-            return Created(string.Empty, bll.bll_criaCurriculum(adt));
+            try
+            {
+                bll.bll_criaCurriculum(adt);
+                return Created(string.Empty, "Currículo criado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex?.InnerException?.Message ?? ex.Message);
+            }
         }
 
         [HttpPost("Token")]
         [FilterRequest]
         public IActionResult GetToken([FromBody] CurriculumModel adt)
         {
-            var secret = Encoding.ASCII.GetBytes("aa790cbf9d02deb783286181e4c5dd5");
-            var symetricSecurityKey = new SymmetricSecurityKey(secret);
-            var securityTokenDescriptor = new SecurityTokenDescriptor
+            try
             {
-                /* DE FORMA RESUMIDA O CLAIM É UM ATRIBUTO, QUE TAMBÉM PODE SER HERDADO DA CLASSE PASSADA NO JSON
-                 * PODE SER UM ATRIBUTO DO OBJETO, COMO NOME, EMAIL, E-mail, Telefone e etc */
-                Subject = new ClaimsIdentity(new Claim[]
+                var secret = Encoding.ASCII.GetBytes("aa790cbf9d02deb783286181e4c5dd5");
+                var symetricSecurityKey = new SymmetricSecurityKey(secret);
+                var securityTokenDescriptor = new SecurityTokenDescriptor
                 {
-                    new Claim(ClaimTypes.NameIdentifier, adt.Nome),
-                    new Claim(ClaimTypes.Email, adt.Email.ToString()),
-                    new Claim(ClaimTypes.MobilePhone, adt.telefone.ToString())
-                }),
-                Expires = DateTime.UtcNow.AddMinutes(30),
-                SigningCredentials = new SigningCredentials(symetricSecurityKey, SecurityAlgorithms.HmacSha256Signature)
-            };
-            var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
-            var tokenGenerated = jwtSecurityTokenHandler.CreateToken(securityTokenDescriptor);
-            var token = jwtSecurityTokenHandler.WriteToken(tokenGenerated);
+                    /* DE FORMA RESUMIDA O CLAIM É UM ATRIBUTO, QUE TAMBÉM PODE SER HERDADO DA CLASSE PASSADA NO JSON
+                     * PODE SER UM ATRIBUTO DO OBJETO, COMO NOME, EMAIL, E-mail, Telefone e etc */
+                    Subject = new ClaimsIdentity(new Claim[]
+                    {
+                    new Claim(ClaimTypes.Name, adt.Nome)
+                    }),
+                    Expires = DateTime.UtcNow.AddMinutes(20),
+                    SigningCredentials = new SigningCredentials(symetricSecurityKey, SecurityAlgorithms.HmacSha256Signature)
+                };
+                var jwtSecurityTokenHandler = new JwtSecurityTokenHandler();
+                var tokenGenerated = jwtSecurityTokenHandler.CreateToken(securityTokenDescriptor);
+                var token = jwtSecurityTokenHandler.WriteToken(tokenGenerated);
 
-            return Ok(new
+                return Ok(new
+                {
+                    Token = token,
+                    Description = "Token criado com sucesso"
+                });
+            }
+            catch (Exception ex)
             {
-                Token = token,
-                Description = "Token criado com sucesso"
-            });
+                return BadRequest(ex?.InnerException?.Message ?? ex.Message);
+            }
         }
 
         [HttpPost("HTMLCode")] // v1/api/HTMLCode - POST / retorna a view HTML do Curriculo
@@ -75,7 +88,14 @@ namespace Curriculum.net.Controllers
         [Authorize] // Requisito autenticação por token novamente
         public IActionResult ViewResult([FromBody] CurriculumModel adt)
         {
-            return View(bll.bll_retornaHTMLCurricullum(adt));
+            try
+            {
+                return View(bll.bll_retornaHTMLCurricullum(adt));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex?.InnerException?.Message ?? ex.Message);
+            }
         }
     }
 }

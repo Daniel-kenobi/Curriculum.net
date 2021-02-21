@@ -72,10 +72,12 @@ namespace Curriculum.net
 
             app.UseRouting();
             app.UseHttpsRedirection();
+            // HABILITO O USO DA AUTENTICAÇÃO (JWT - JSON WEB TOKEN) 
+            // o "USE AUTHENTICATION TEM QUE VIR ANTES DO AUTHORIZATION
+            app.UseAuthentication();
             app.UseAuthorization();
 
-            // HABILITO O USO DA AUTENTICAÇÃO (JWT - JSON WEB TOKEN) 
-            app.UseAuthentication();
+           
             // aciono o uso do swagger
             app.UseSwagger();
             // Aciono a parte gráfica (UI) do swagger
