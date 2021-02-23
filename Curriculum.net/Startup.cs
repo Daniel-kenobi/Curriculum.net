@@ -6,7 +6,6 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.IO;
 using System.Text;
-using System.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 

@@ -4,5 +4,116 @@
         <name>Curriculum.net</name>
     </assembly>
     <members>
+        <member name="T:Models.CurriculumModel">
+            <summary>
+            Objeto principal onde se encontra todas as informações e encapsula todos os objetos 
+            do curriculo
+            </summary>
+        </member>
+        <member name="P:Models.CurriculumModel.ID">
+            <summary>Chave primária identificadora do currículo - OFF</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.Nome">
+            <summary>Nome do dono do currículo</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.Email">
+            <summary>Email do dono do currículo </summary>
+        </member>
+        <member name="P:Models.CurriculumModel.telefone">
+            <summary>Telefone do dono do currículo</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.cep">
+            <summary>Cep do dono do currículo</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.FraseMotivacional">
+            <summary>Frase motivacional do currículo</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.Linkedin">
+            <summary>Linkedin do dono do currículo</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.Github">
+            <summary>Github do dono do currículo </summary>
+        </member>
+        <member name="P:Models.CurriculumModel.Instagram">
+            <summary>Instagram do dono do currículo </summary>
+        </member>
+        <member name="P:Models.CurriculumModel.lst_infos_academicas">
+            <summary>Lista informações academicas - estudos, faculdades...</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.lst_Historico_Profissional">
+            <summary>Lista de hitórico profissional - Locais de trabalho, freelances...</summary>
+        </member>
+        <member name="P:Models.CurriculumModel.lst_soft_skills">
+            <summary>Lista de habilidades que você possui e aprendeu </summary>
+        </member>
+        <member name="T:Models.InfosAcademicas">
+            <summary>objeto das informações academicas</summary>
+        </member>
+        <member name="P:Models.InfosAcademicas.Nome_instituicao">
+            <summary>Nome da intituição academica</summary>
+        </member>
+        <member name="P:Models.InfosAcademicas.TipoCurso">
+            <summary>Tipo do curso (Ensino médio, ensino superior, curso técnico</summary>
+        </member>
+        <member name="P:Models.InfosAcademicas.Curso">
+            <summary>Nome do curso (Ciencias da computação, ADS, Segurança da informação</summary>
+        </member>
+        <member name="P:Models.InfosAcademicas.Descricao_aprendizado">
+            <summary>O que você aprendeu no curso e quais habilidades desenvolveu</summary>
+        </member>
+        <member name="P:Models.InfosAcademicas.DataInicio">
+            <summary>Data de início do curso</summary>
+        </member>
+        <member name="P:Models.InfosAcademicas.DataConclusao">
+            <summary>Data da conclusão do curso</summary>
+        </member>
+        <member name="T:Models.HistoricoProfissional">
+            <summary>Objeo do histórico profissional</summary>
+        </member>
+        <member name="P:Models.HistoricoProfissional.Nome_instituicao">
+            <summary>Nome da instituição</summary>
+        </member>
+        <member name="P:Models.HistoricoProfissional.Cargo">
+            <summary>Cargo desempenhado na empresa </summary>
+        </member>
+        <member name="P:Models.HistoricoProfissional.Descricao_cargo">
+            <summary>Descrição do cargo. O que você fazia neste cargo e o que aprendeu</summary>
+        </member>
+        <member name="P:Models.HistoricoProfissional.DataInicio">
+            <summary>Data de início neste cargo</summary>
+        </member>
+        <member name="P:Models.HistoricoProfissional.DataSaida">
+            <summary>Data de saida deste cargo </summary>
+        </member>
+        <member name="T:Models.dto_cep">
+            <summary>Objeto de retorno da viacep</summary>
+        </member>
+        <member name="P:Models.dto_cep.cep">
+            <summary>CEP da residencia</summary>
+        </member>
+        <member name="P:Models.dto_cep.logradouro">
+            <summary>Rua do dono do currículo</summary>
+        </member>
+        <member name="P:Models.dto_cep.complemento">
+            <summary>Complemento</summary>
+        </member>
+        <member name="P:Models.dto_cep.bairro">
+            <summary>Bairro do dono do currículo</summary>
+        </member>
+        <member name="P:Models.dto_cep.localidade">
+            <summary>Cidade do dono do currículo </summary>
+        </member>
+        <member name="P:Models.dto_cep.uf">
+            <summary>UF do dono do currículo</summary>
+        </member>
+        <member name="T:Models.SoftSkills">
+            <summary>Objeto das habilidades</summary>
+        </member>
+        <member name="P:Models.SoftSkills.Nome">
+            <summary>Nome da sua habilidade</summary>
+        </member>
+        <member name="P:Models.SoftSkills.descricao">
+            <summary>Descrição da sua habilidade</summary>
+        </member>
     </members>
 </doc>

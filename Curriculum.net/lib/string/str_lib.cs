@@ -82,7 +82,7 @@ namespace lib.str
                 foreach (var i in infos.lst_Historico_Profissional)
                 {
                     sb.Append($"<h3 style=\"color: black;\"> {i.Nome_instituicao} • {i.Cargo}</h3>");
-                    sb.Append($"<p style=\"color: darkgray;\"> Entrada: {i.DataInicio.ToString("dd/MM/yyyy")} - Saída: {i.DataConclusao.ToString("dd/MM/yyyy")}</p>");
+                    sb.Append($"<p style=\"color: darkgray;\"> Entrada: {i.DataInicio.ToString("dd/MM/yyyy")} - Saída: {i.DataSaida.ToString("dd/MM/yyyy")}</p>");
                     sb.Append($"<p style=\"color: darkgray;\"> {i.Descricao_cargo}</p>");
                 }
 
