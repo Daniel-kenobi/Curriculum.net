@@ -7,8 +7,7 @@ recursos para fins didáticos. Incluindo eles a autenticação com o JWT (json w
 
 
 <p>Pacotes utilizados no projeto:</p>
-<ol>
-<li>[Newtonsoft JSON](https://github.com/JamesNK/Newtonsoft.Json)</li>
-<li>[Select HTML to PDF](https://selectpdf.com/community-edition)</li>
-<li>[Swashbuckle (swagger)](https://github.com/domaindrivendev/Swashbuckle.AspNetCore]</li>
-</ol>
+
+[Newtonsoft JSON](https://github.com/JamesNK/Newtonsoft.Json)
+[Select HTML to PDF](https://selectpdf.com/community-edition)
+[Swashbuckle (swagger)](https://github.com/domaindrivendev/Swashbuckle.AspNetCore)
