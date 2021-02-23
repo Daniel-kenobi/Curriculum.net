@@ -5,33 +5,10 @@ using lib.str;
 
 namespace lib.bll
 {
+    /// <summary>Classe responsável pela lógica do e negócios (BLL - Business Logic Layer)</summary>
     public class bll_Curricullum : IBllInterface<CurriculumModel>
     {
-        /* // TESTE
-          public string bll_vld(CurriculumModel adt)
-        {
-            List<string> erros = new List<string>();
-
-            if (adt == null)
-                erros.Add("Erro interno");
-
-            if (string.IsNullOrEmpty(adt.Nome))
-               erros.Add("Nome vazio");
-
-            if (string.IsNullOrEmpty(adt.telefone) && string.IsNullOrEmpty(adt.Email))
-               erros.Add("Contatos inválidos");
-
-            string lst_erros = string.Empty;
-            if (erros.Count > 0)
-            {
-                foreach(var i in erros)
-                {
-                    lst_erros += $"Erro: {i} \n";
-                }
-            }
-            return lst_erros;
-        }
-         */
+        /// <summary>Método de validação do objeto CurriculumModel </summary>
         public void bll_vld(CurriculumModel adt)
         {
             if (adt == null)
@@ -44,6 +21,7 @@ namespace lib.bll
                 throw new Exception("Contatos inválidos");
         }
 
+        /// <summary>Lógica de criação</summary>
         public bool bll_criaCurriculum(CurriculumModel adt)
         {
             try
@@ -58,6 +36,7 @@ namespace lib.bll
             }
         }
 
+        /// <summary>Lógica que retorna a view do currículo (Não cria o PDF do mesmo)</summary>
         public string bll_retornaHTMLCurricullum(CurriculumModel adt)
         {
             try

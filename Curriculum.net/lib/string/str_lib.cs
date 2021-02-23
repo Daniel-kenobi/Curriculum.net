@@ -6,9 +6,10 @@ using System;
 
 namespace lib.str
 {
+    /// <summary>Classe de tratamento de string </summary>
     public static class str_lib
     {
-
+        ///<summary>Método que puxa os dados de endereço com bas eno CEP</summary>
         public static dto_cep RetornaCep(string cep)
         {
             if (string.IsNullOrEmpty(cep))
@@ -20,6 +21,7 @@ namespace lib.str
             return dto;
         }
 
+        ///<summary>Método que cria o código HTML do curriculo</summary>
         public static string criaHTML(CurriculumModel infos)
         {
             StringBuilder sb = new StringBuilder();
@@ -106,6 +108,7 @@ namespace lib.str
             return sb.ToString();
         }
 
+        ///<summary>étodo que cria o PDF com base no HTML recebido</summary>
         public static string criaPDF(string HTML)
         {
             HtmlToPdf converter = new HtmlToPdf();

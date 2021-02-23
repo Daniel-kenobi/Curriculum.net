@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using Models;
 
+/// CLASSE PARA MAPEAMENTO DOS ERROS GENÉRICOS NO SWAGGER
+
 namespace lib.Retornos
 {
+    /// <summary>Classe de erro genérico (400 - BAD REQUEST)</summary>
     public class ErroGenerico
     {
         public string ErrorMessage { get; set; }
@@ -13,6 +16,7 @@ namespace lib.Retornos
         }
     }
 
+    /// <summary>Classe de lista de erros (400 - BAD REQUEST) )</summary>
     public class ListError
     {
         public IEnumerable<string> Erros { get; private set; }
@@ -23,6 +27,7 @@ namespace lib.Retornos
         }
     }
 
+    /// <summary>Classe de token (201 - CREATED - TOKEN))</summary>
     public class Token
     {
         public string token{ get; set; }
@@ -33,6 +38,7 @@ namespace lib.Retornos
         }
     }
 
+    /// <summary>Classe de sucesso (200 - OK)</summary>
     public class Sucess
     {
         public CurriculumModel Model { get; set; }

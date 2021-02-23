@@ -4,6 +4,63 @@
         <name>Curriculum.net</name>
     </assembly>
     <members>
+        <member name="M:Curriculum.net.Controllers.CurriculumController.#ctor">
+            <summary>Construtor da classe</summary>
+        </member>
+        <member name="M:Curriculum.net.Controllers.CurriculumController.Criar(Models.CurriculumModel)">
+            <summary>Rota para gerar um novo currículo (v1/api/inc - POST)</summary>
+        </member>
+        <member name="M:Curriculum.net.Controllers.CurriculumController.GetToken(Models.CurriculumModel)">
+            <summary>Rota para obter um token com base no nome do dono do currículo (v1/api/Token - POST)</summary>
+        </member>
+        <member name="M:Curriculum.net.Controllers.CurriculumController.ViewResult(Models.CurriculumModel)">
+            <summary>Rota que retorna uma view (HTML) do currículo (v1/api/HTMLCode - POST)</summary>
+        </member>
+        <member name="T:lib.bll.bll_Curricullum">
+            <summary>Classe responsável pela lógica do e negócios (BLL - Business Logic Layer)</summary>
+        </member>
+        <member name="M:lib.bll.bll_Curricullum.bll_vld(Models.CurriculumModel)">
+            <summary>Método de validação do objeto CurriculumModel </summary>
+        </member>
+        <member name="M:lib.bll.bll_Curricullum.bll_criaCurriculum(Models.CurriculumModel)">
+            <summary>Lógica de criação</summary>
+        </member>
+        <member name="M:lib.bll.bll_Curricullum.bll_retornaHTMLCurricullum(Models.CurriculumModel)">
+            <summary>Lógica que retorna a view do currículo (Não cria o PDF do mesmo)</summary>
+        </member>
+        <member name="T:lib.Retornos.ErroGenerico">
+            <summary>Classe de erro genérico (400 - BAD REQUEST)</summary>
+        </member>
+        <member name="T:lib.Retornos.ListError">
+            <summary>Classe de lista de erros (400 - BAD REQUEST) )</summary>
+        </member>
+        <member name="T:lib.Retornos.Token">
+            <summary>Classe de token (201 - CREATED - TOKEN))</summary>
+        </member>
+        <member name="T:lib.Retornos.Sucess">
+            <summary>Classe de sucesso (200 - OK)</summary>
+        </member>
+        <member name="T:lib.Filters.FilterRequest">
+            <summary>Classe de filtros - Intercepta as chamadas HTTP da API </summary>
+        </member>
+        <member name="M:lib.Filters.FilterRequest.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>Filtro que verifica se o model é valido ou não com base nos requireds </summary>
+        </member>
+        <member name="T:lib.Interfaces.IBllInterface`1">
+            <summary>Interface modelo da classe de lógica de negócios (BLL) </summary>
+        </member>
+        <member name="T:lib.str.str_lib">
+            <summary>Classe de tratamento de string </summary>
+        </member>
+        <member name="M:lib.str.str_lib.RetornaCep(System.String)">
+            <summary>Método que puxa os dados de endereço com bas eno CEP</summary>
+        </member>
+        <member name="M:lib.str.str_lib.criaHTML(Models.CurriculumModel)">
+            <summary>Método que cria o código HTML do curriculo</summary>
+        </member>
+        <member name="M:lib.str.str_lib.criaPDF(System.String)">
+            <summary>étodo que cria o PDF com base no HTML recebido</summary>
+        </member>
         <member name="T:Models.CurriculumModel">
             <summary>
             Objeto principal onde se encontra todas as informações e encapsula todos os objetos 

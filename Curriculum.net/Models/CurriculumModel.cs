@@ -18,21 +18,17 @@ namespace Models
         [Required(ErrorMessage = "ID iválida")]
         public Int64 ID { get; set; } // interno
 
-
         /// <summary>Nome do dono do currículo</summary>
         [Required(ErrorMessage = "Nome inválido")]
         public string Nome { get; set; }
-
 
         /// <summary>Email do dono do currículo </summary>
         [Required(ErrorMessage = "Email Inválido")]
         public string Email { get; set; }
 
-
         /// <summary>Telefone do dono do currículo</summary>
         [Required(ErrorMessage = "Telefone Inválido")]
         public string telefone { get; set; }
-
 
         /// <summary>Cep do dono do currículo</summary>
         public dto_cep cep { get; set; }
@@ -47,10 +43,8 @@ namespace Models
         /// <summary>Linkedin do dono do currículo</summary>
         public string Linkedin { get; set; }
 
-
         /// <summary>Github do dono do currículo </summary>
         public string Github { get; set; }
-
 
         /// <summary>Instagram do dono do currículo </summary>
         public string Instagram { get; set; }

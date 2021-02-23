@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace lib.Filters
 {
+    /// <summary>Classe de filtros - Intercepta as chamadas HTTP da API </summary>
     public class FilterRequest : ActionFilterAttribute
     {
+        /// <summary>Filtro que verifica se o model é valido ou não com base nos requireds </summary>
         public override void OnActionExecuting(ActionExecutingContext context)
         {
             // CRIO UM FILTRO QUE INTERCEPTA AS REQUEST PARA VALIDAR SE O VIEWMODEL É VALIDO OU NÃO

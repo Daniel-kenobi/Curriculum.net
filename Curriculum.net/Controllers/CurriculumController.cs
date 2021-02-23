@@ -20,10 +20,13 @@ namespace Curriculum.net.Controllers
     [SwaggerResponse(statusCode: 401, "Usuário não autorizado!", Type = typeof(ErroGenerico))]
     [SwaggerResponse(statusCode: 500, "Erro interno do servidor!", Type = typeof(ErroGenerico))]
 
-    [Route("v1/api")] // configuração de ROTA, setei p prefixo da API para v1/api
+    ///<summary>pre-fixo de rota (v1/api)</summary>
+    [Route("v1/api")] // configuração de ROTA, setei p prefixo da API para v1/
     public class CurriculumController : Controller
     {
         bll_Curricullum bll;
+
+        ///<summary>Construtor da classe</summary>
         public CurriculumController()
         {
             bll ??= new bll_Curricullum();
@@ -32,6 +35,7 @@ namespace Curriculum.net.Controllers
                 throw new Exception("Erro interno");
         }
 
+        ///<summary>Rota para gerar um novo currículo (v1/api/inc - POST)</summary>
         [HttpPost("inc")] // v1/api/inc - POST - cria um novo curriculo
         [FilterRequest]  // ASSINO A CHAMADA DO FILTRO NESSA ROTA
         [Authorize] // Requisito autorização por token
@@ -48,6 +52,7 @@ namespace Curriculum.net.Controllers
             }
         }
 
+        ///<summary>Rota para obter um token com base no nome do dono do currículo (v1/api/Token - POST)</summary>
         [HttpPost("Token")]
         [FilterRequest]
         public IActionResult GetToken([FromBody] CurriculumModel adt)
@@ -83,6 +88,7 @@ namespace Curriculum.net.Controllers
             }
         }
 
+        ///<summary>Rota que retorna uma view (HTML) do currículo (v1/api/HTMLCode - POST)</summary>
         [HttpPost("HTMLCode")] // v1/api/HTMLCode - POST / retorna a view HTML do Curriculo
         [FilterRequest] // ASSINO A CHAMADA DO FILTRO NESSA ROTA
         [Authorize] // Requisito autenticação por token novamente
