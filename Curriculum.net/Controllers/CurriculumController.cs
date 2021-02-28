@@ -91,7 +91,7 @@ namespace Curriculum.net.Controllers
         ///<summary>Rota que retorna uma view (HTML) do currículo (v1/api/HTMLCode - POST)</summary>
         [HttpPost("HTMLCode")] // v1/api/HTMLCode - POST / retorna a view HTML do Curriculo
         [FilterRequest] // ASSINO A CHAMADA DO FILTRO NESSA ROTA
-        [Authorize] // Requisito autenticação por token novamente
+        [Authorize] // Requisito autenticação por token
         public IActionResult ViewResult([FromBody] CurriculumModel adt)
         {
             try

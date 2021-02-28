@@ -1,0 +1,51 @@
+.opblock-summary-method {
+    background: #60BEF0 !important;
+    border-radius: 3px !important;
+    border-color: white !important;
+}
+
+.opblock-summary-post {
+    background: #60BEF0 !important;
+}
+
+body {
+    font-family: Arial !important;
+}
+
+.topbar {
+    background: #60BEF0 !important;
+}
+
+.select-label{
+    visibility: hidden !important;
+}
+
+.title {
+    color: #60BEF0 !important;
+}
+
+.version-stamp {
+    visibility: hidden !important;
+}
+
+.url{
+    visibility: hidden !important;
+}
+
+.opblock-post {
+    border-color: black !important;
+    background: #60BEF0 !important;
+}
+
+.opblock-summary
+{
+    border-color: black;
+}
+
+.span::after {
+    background: #60BEF0 !important;
+}
+
+.CurriculumModel {
+    background: #60BEF0 !important;
+}

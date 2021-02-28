@@ -88,8 +88,11 @@ namespace Curriculum.net
                     x.RoutePrefix = string.Empty; // ADICIONANDO STRING.EMPTY NO PREFIXO DE ROTA DO SWAGGER
                     // EU FAÇO COM QUE, ASSIM QUE A API FOR CHAMADA O INDEX DO SWAGGER SEJA ABERTO
                     x.DocumentTitle = "Curricullum.net";
+                    x.InjectStylesheet("/swagger/custom.css");
                 });
 
+            // habilito o uso de arquivos estáticos - custom.css
+            app.UseStaticFiles();
 
             app.UseEndpoints(endpoints =>
             {
